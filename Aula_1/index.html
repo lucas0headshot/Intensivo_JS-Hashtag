@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Lucas">
+
+    <title>Audioplayer</title>
+
+    <link rel="shortcut icon" href="assets/images/icon.svg" type="image/*">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Inter:wght@400;600;700&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <a href="#">
+            <i class="bi bi-music-note-list"></i>
+        </a>
+
+        <p><a href="https://github.com/lucas0headshot" target="_blank" referrerpolicy="noferrer">Desenvolvido por Lucas &COPY;</a></p>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="audioplayer">
+                <figure class="cover-wrapper">
+                    <img style="width: 100%; height: 100%; object-fit: cover;" src="assets/images/cover.jpg" alt="Capa do Álbum" id="cover">
+                </figure>
+
+                <div class="music-details">
+                    <h1 id="title">Title</h1>
+                    <h2 id="author">Author</h2>
+                </div>
+
+                <div class="player">
+                    <audio src="data/music/1.mp3"></audio>
+
+                    <button type="button" class="bi bi-skip-start-fill" id="previous"></button>
+                    <button type="button" data-playing="false" class="bi bi-play-circle-fill" role="switch" id="control"></button>
+                    <button type="button" class="bi bi-skip-end-fill" id="next"></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer>
+        <p><a href="https://github.com/lucas0headshot" target="_blank" referrerpolicy="noferrer">Desenvolvido por Lucas &COPY;</a></p>
+        
+        <ul class="contato-list">
+            <li>
+                <a href="https://www.linkedin.com/in/lucas-teixeira-ronchi/" target="_blank" referrerpolicy="noferrer">
+                    <span class="bi bi-linkedin"></span>
+                    <span>LinkedIn</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/lucas0headshot" target="_blank" referrerpolicy="noferrer">
+                    <span class="bi bi-github"></span>
+                    <span>GitHub</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

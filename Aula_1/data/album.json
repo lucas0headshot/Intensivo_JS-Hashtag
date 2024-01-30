@@ -1,0 +1,23 @@
+{
+    "album": {
+        "title": "Meteora 20th Anniversay Edition",
+        "author": "Linkin Park",
+        "cover": "data/image/1.jpg",
+        "tracks": [
+            {
+                "title": "Easier to Run",
+                "src": "data/music/1.mp3"
+            },
+
+            {
+                "title": "Pretty Birdy - Somewhere I Belong 2002",
+                "src": "data/music/2.mp3"
+            },
+
+            {
+                "title": "Lost",
+                "src": "data/music/3.mp3"
+            }
+        ]
+    }
+}
