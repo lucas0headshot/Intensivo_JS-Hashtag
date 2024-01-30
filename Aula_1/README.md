@@ -19,6 +19,6 @@ Este é um projeto de Player de Áudio interativo construído utilizando HTML, C
 
 ## Como Usar
 
-1. Abra o arquivo `index.html` em um navegador.
+1. Abra o arquivo [`index.html`](https://lucas0headshot.github.io/Intensivo_JS-Hashtag/Aula_1/) em um navegador da web.
 2. Interaja com os botões do player para controlar a reprodução de áudio.
 3. Observe as informações da faixa atual exibidas na página.
