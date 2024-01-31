@@ -1,0 +1,75 @@
+{
+    "product": {
+        "name": "SmartWatch",
+        "description": "Pulseira loop esportiva",
+        "price": 499.99,
+        
+        "colors": [
+            {
+                "src": "data/image/1.png"
+            },
+            
+            {
+                "src": "data/image/2.png"
+            },
+
+            {
+                "src": "data/image/3.png"
+            }
+        ],
+
+        "variations": [
+            {
+                "name": "Celeste", 
+                "images": [
+                    {
+                        "src": "data/image/1/0.png"
+                    },
+
+                    {
+                        "src": "data/image/1/1.png"
+                    },
+
+                    {
+                        "src": "data/image/1/2.png"
+                    }
+                ]
+            },
+
+            {
+                "name": "Rosa", 
+                "images": [
+                    {
+                        "src": "data/image/1/0.png"
+                    },
+
+                    {
+                        "src": "data/image/1/1.png"
+                    },
+
+                    {
+                        "src": "data/image/1/2.png"
+                    }
+                ]
+            },
+
+
+            {
+                "name": "Estelar", 
+                "images": [
+                    {
+                        "src": "data/image/3/0.png"
+                    },
+
+                    {
+                        "src": "data/image/3/1.png"
+                    },
+
+                    {
+                        "src": "data/image/3/2.png"
+                    }
+                ]
+            }
+        ]
+    }
+}
