@@ -3,52 +3,48 @@
         "name": "SmartWatch",
         "description": "Pulseira loop esportiva",
         "price": 499.99,
-        
-        "colors": [
-            {
-                "src": "data/image/1.png"
-            },
-            
-            {
-                "src": "data/image/2.png"
-            },
-
-            {
-                "src": "data/image/3.png"
-            }
-        ],
 
         "variations": [
             {
                 "name": "Celeste", 
+                "color": [
+                    {
+                        "src": "data/products/1/color.png"
+                    }
+                ],
                 "images": [
                     {
-                        "src": "data/image/1/0.png"
+                        "src": "data/products/1/images/0.png"
                     },
 
                     {
-                        "src": "data/image/1/1.png"
+                        "src": "data/products/1/images/1.png"
                     },
 
                     {
-                        "src": "data/image/1/2.png"
+                        "src": "data/products/1/images/2.png"
                     }
                 ]
             },
 
             {
                 "name": "Rosa", 
+                "color": [
+                    {
+                        "src": "data/products/2/color.png"
+                    }
+                ],
                 "images": [
                     {
-                        "src": "data/image/1/0.png"
+                        "src": "data/products/1/images/0.png"
                     },
 
                     {
-                        "src": "data/image/1/1.png"
+                        "src": "data/products/1/images/1.png"
                     },
 
                     {
-                        "src": "data/image/1/2.png"
+                        "src": "data/products/1/images/2.png"
                     }
                 ]
             },
@@ -56,17 +52,22 @@
 
             {
                 "name": "Estelar", 
+                "color": [
+                    {
+                        "src": "data/products/3/color.png"
+                    }
+                ],
                 "images": [
                     {
-                        "src": "data/image/3/0.png"
+                        "src": "data/products/3/images/0.png"
                     },
 
                     {
-                        "src": "data/image/3/1.png"
+                        "src": "data/products/3/images/1.png"
                     },
 
                     {
-                        "src": "data/image/3/2.png"
+                        "src": "data/products/3/images/2.png"
                     }
                 ]
             }
