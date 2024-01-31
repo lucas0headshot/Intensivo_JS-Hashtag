@@ -1,10 +1,11 @@
 function setupProduct(productData) {
     const nameElement = document.getElementById('name');
     const priceElement = document.getElementById('price');
-    const colorsElement = document.querySelector('.colors-list');
+    const colorsElement = document.getElementById('color-list');
     const previewElement = document.getElementById('preview');
-    const previewsElement = document.querySelector('.previews-list');
+    const previewsElement = document.getElementById('preview-list');
 
+    
 
     function setVariation(index) {
         const variation = productData.product.variations[index];
@@ -18,33 +19,54 @@ function setupProduct(productData) {
     function setPreviews(variation, variationIndex) {
         if (variation.images.length > 0) {
             variation.images.forEach((index) => {
-                previewsElement.innerHTML += 
+                let previewElement = document.createElement('li');
+                previewElement.innerHTML = 
                     `<li class="preview-item">
                         <input type="radio" data-current-preview="${index}" name="preview-option">
-                            <img src="data/image/${variationIndex}/${index + 1}.png" alt="Foto do Produto">
+                            <img src="data/products/${variationIndex}/images/${index}.png" alt="Foto do Produto">
                         </input>
                     </li>`;
+
+                previewElement.addEventListener('click', function() {
+                    setPreview(variationIndex, this.getAttribute('data-current-preview'));
+                });
+
+                previewsElement.appendChild(previewElement);
             });
         }
     };
 
+    function setPreview(variationIndex, index) {
+        const preview = productData.product.variations[variationIndex].images[index]; 
 
-    if (productData.product.colors.length > 0) { //Checar se há colors
-        productData.product.colors.forEach((index) => {
-            let colorElement = document.createElement('li');
-            colorElement.innerHTML = 
-                `<li class="color">
-                    <input type="radio" data-current-color="${index}" name="color-option">
-                        <img src="data/image/${index + 1}.png" alt="Foto da cor">
-                    </input>
-                </li>`;
+        if (preview) {
+            previewElement.src = preview.src;
+        }
+    };
 
-            colorsElement[0].appendChild(colorElement);
-        });
-    }
 
-    if (productData.product.variations.length > 0) {
+    if (productData.product.variations.length > 0) { //Checar se há variations
         previewElement.src = productData.product.variations[0].images[1].src;
+
+        productData.product.variations.forEach((variation, index) => { //Montar colors
+            console.warn(variation);
+
+            if (variation.color[0].src) { //Checar se variation tem color
+                let colorElement = document.createElement('li');
+                colorElement.innerHTML += 
+                    `<li class="color">
+                        <input type="radio" data-current-color="${index}" name="color-option">
+                            <img src="data/products/${index + 1}/color.png" alt="Foto da cor">
+                        </input>
+                    </li>`;
+
+                colorElement.addEventListener('click', function() {
+                    setVariation(this.getAttribute('data-current-color'));
+                });
+
+                colorsElement.appendChild(colorElement);
+            }
+        });
     }
 
     if (productData.product.name) { //Checar se há name

@@ -81,6 +81,10 @@ header {
     object-fit: contain;
     cursor: pointer;
 }
+.color:checked {
+    border: #0066cc 1px solid;
+    border-radius: 10px;
+}
 
 .save-later {
     width: 20rem;
