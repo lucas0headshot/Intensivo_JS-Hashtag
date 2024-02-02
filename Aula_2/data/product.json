@@ -4,6 +4,16 @@
         "description": "Pulseira loop esportiva",
         "price": 499.99,
 
+        "sizes": [
+            {
+                "size": 41
+            },
+
+            {
+                "size": 45
+            }
+        ],
+
         "variations": [
             {
                 "name": "Celeste", 
@@ -36,15 +46,15 @@
                 ],
                 "images": [
                     {
-                        "src": "data/products/1/images/0.png"
+                        "src": "data/products/2/images/0.png"
                     },
 
                     {
-                        "src": "data/products/1/images/1.png"
+                        "src": "data/products/2/images/1.png"
                     },
 
                     {
-                        "src": "data/products/1/images/2.png"
+                        "src": "data/products/2/images/2.png"
                     }
                 ]
             },
