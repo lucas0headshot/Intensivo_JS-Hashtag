@@ -4,6 +4,7 @@ function setupProduct(productData) {
     const colorsElement = document.getElementById('color-list');
     const previewElement = document.getElementById('preview');
     const previewsElement = document.getElementById('preview-list');
+    const sizesElement = document.getElementById('sizes-list');
 
     
 
@@ -18,17 +19,19 @@ function setupProduct(productData) {
 
     function setPreviews(variation, variationIndex) {
         if (variation.images.length > 0) {
-            variation.images.forEach((index) => {
+            previewsElement.innerHTML = '';
+
+            variation.images.forEach((image, index) => {
                 let previewElement = document.createElement('li');
+                previewElement.classList.add('preview-item');
                 previewElement.innerHTML = 
-                    `<li class="preview-item">
-                        <input type="radio" data-current-preview="${index}" name="preview-option">
-                            <img src="data/products/${variationIndex}/images/${index}.png" alt="Foto do Produto">
-                        </input>
-                    </li>`;
+                    `<input type="radio" data-current-preview="${index}" id="preview-${index}" name="preview-option">
+                     <label for="preview-${index}">
+                        <img src="${image.src}" alt="Foto do Produto">
+                      </label>`;
 
                 previewElement.addEventListener('click', function() {
-                    setPreview(variationIndex, this.getAttribute('data-current-preview'));
+                    setPreview(variationIndex, document.getElementById(`preview-${index}`).dataset.currentPreview);
                 });
 
                 previewsElement.appendChild(previewElement);
@@ -44,28 +47,56 @@ function setupProduct(productData) {
         }
     };
 
+    function setSize(size) {
+        if (size == 45) {
+            previewElement.style.scale = 1.1;
+        } else {
+            previewElement.style.scale = 1.0;
+        }
+    };
+
 
     if (productData.product.variations.length > 0) { //Checar se há variations
-        previewElement.src = productData.product.variations[0].images[1].src;
+        previewElement.src = productData.product.variations[0].images[1].src; //Setar preview como a 2º imagem da 1º variation
+
+        setPreviews(productData.product.variations[0], 0);
 
         productData.product.variations.forEach((variation, index) => { //Montar colors
-            console.warn(variation);
+            const color = variation.color[0];
 
-            if (variation.color[0].src) { //Checar se variation tem color
+            if (color) { //Checar se variation tem color
                 let colorElement = document.createElement('li');
-                colorElement.innerHTML += 
-                    `<li class="color">
-                        <input type="radio" data-current-color="${index}" name="color-option">
-                            <img src="data/products/${index + 1}/color.png" alt="Foto da cor">
-                        </input>
-                    </li>`;
+                colorElement.classList.add('color');
+                colorElement.innerHTML = 
+                    `<input type="radio" id="color-${index}" data-current-color="${index}" name="color-option">
+                     <label for="color-${index}">
+                        <img src="${color.src}" alt="Foto da cor">
+                     </label>`;
 
-                colorElement.addEventListener('click', function() {
-                    setVariation(this.getAttribute('data-current-color'));
+                colorElement.addEventListener('click', () => {
+                    setVariation(document.getElementById(`color-${index}`).dataset.currentColor);
                 });
 
                 colorsElement.appendChild(colorElement);
             }
+        });
+    }
+
+    if (productData.product.sizes.length > 0) { //Checar se há sizes
+        productData.product.sizes.forEach((size, index) => {
+            let sizeElement = document.createElement('li');
+            sizeElement.classList.add('size-item');
+            sizeElement.innerHTML = 
+                `<input type="radio" name="size-option" id="size-${index}">
+                 <label for="size-${index}">
+                    ${size.size} mm
+                 </label>`;
+
+            sizeElement.addEventListener('click', () => {
+                setSize(size.size);
+            });
+
+            sizesElement.appendChild(sizeElement);
         });
     }
 
@@ -74,7 +105,7 @@ function setupProduct(productData) {
     }
 
     if (productData.product.price) { //Checar se há price
-        priceElement.textContent = `R$${productData.product.price}`;
+        priceElement.textContent = `R$ ${productData.product.price}`;
     }
 };
 
